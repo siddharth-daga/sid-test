@@ -1,0 +1,6 @@
+framework module Pods_SidTest {
+  umbrella header "Pods-SidTest-umbrella.h"
+
+  export *
+  module * { export * }
+}

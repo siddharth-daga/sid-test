@@ -22,3 +22,19 @@ extension UITableView {
         }
     }
 }
+
+extension UIImageView {
+    func loadImage(urlString: String?, placeholderImage: UIImage? = nil) {
+        let imageUrl = urlString?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        self.sd_setImage(with: URL(string: imageUrl ?? ""), placeholderImage: nil, options: [.scaleDownLargeImages], completed: nil)
+        self.sd_imageTransition = .fade
+    }
+}
+
+extension UIView {
+    func addCornerRadius(radius: CGFloat) {
+        layer.cornerRadius = radius
+        layer.masksToBounds = true
+    }
+}
+

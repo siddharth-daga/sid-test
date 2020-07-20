@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ArticleListingTableViewCell: BaseTableViewCell {
 
@@ -22,12 +23,15 @@ class ArticleListingTableViewCell: BaseTableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        imgUser?.addCornerRadius(radius: imgUser?.bounds.height ?? 60.0)
     }
 
     override func setupCell<T>(viewPresentable: T) {
         if let viewPresentable = viewPresentable as? ArticleListingCellPresentable {
+            imgUser?.loadImage(urlString: viewPresentable.imgUserUrl)
             lblUserName?.text = viewPresentable.userName
             lblUserDesignation?.text = viewPresentable.userDesignation
+            imgArticle?.loadImage(urlString: viewPresentable.imgUserUrl)
             lblArticleContent?.text = viewPresentable.articleContent
             lblArticleTitle?.text = viewPresentable.articleTitle
             lblArticleUrl?.text = viewPresentable.articleUrl

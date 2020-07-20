@@ -25,6 +25,14 @@ class ArticleListingTableViewCell: BaseTableViewCell {
     }
 
     override func setupCell<T>(viewPresentable: T) {
-        
+        if let viewPresentable = viewPresentable as? ArticleListingCellPresentable {
+            lblUserName?.text = viewPresentable.userName
+            lblUserDesignation?.text = viewPresentable.userDesignation
+            lblArticleContent?.text = viewPresentable.articleContent
+            lblArticleTitle?.text = viewPresentable.articleTitle
+            lblArticleUrl?.text = viewPresentable.articleUrl
+            lblArticleLikesCount?.text = viewPresentable.articleLikesCount
+            lblArticleCommentsCount?.text = viewPresentable.articleCommentsCount
+        }
     }
 }

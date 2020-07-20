@@ -24,6 +24,9 @@
 		536DFED524C60780004C5C3A /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536DFED424C60780004C5C3A /* BaseTableViewCell.swift */; };
 		536DFED824C607D3004C5C3A /* ArticleListingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536DFED624C607D3004C5C3A /* ArticleListingTableViewCell.swift */; };
 		536DFED924C607D3004C5C3A /* ArticleListingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 536DFED724C607D3004C5C3A /* ArticleListingTableViewCell.xib */; };
+		536DFEDC24C60C4B004C5C3A /* ArticleListingCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536DFEDB24C60C4B004C5C3A /* ArticleListingCellViewModel.swift */; };
+		536DFEE024C60D1F004C5C3A /* AricleListingModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536DFEDF24C60D1F004C5C3A /* AricleListingModels.swift */; };
+		536DFEE224C611BB004C5C3A /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536DFEE124C611BB004C5C3A /* Extentions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +49,9 @@
 		536DFED424C60780004C5C3A /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		536DFED624C607D3004C5C3A /* ArticleListingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListingTableViewCell.swift; sourceTree = "<group>"; };
 		536DFED724C607D3004C5C3A /* ArticleListingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleListingTableViewCell.xib; sourceTree = "<group>"; };
+		536DFEDB24C60C4B004C5C3A /* ArticleListingCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListingCellViewModel.swift; sourceTree = "<group>"; };
+		536DFEDF24C60D1F004C5C3A /* AricleListingModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AricleListingModels.swift; sourceTree = "<group>"; };
+		536DFEE124C611BB004C5C3A /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +107,7 @@
 				536DFEB924C60270004C5C3A /* HelperProtocols.swift */,
 				536DFEBB24C602D0004C5C3A /* Enums.swift */,
 				536DFECA24C60576004C5C3A /* Utility.swift */,
+				536DFEE124C611BB004C5C3A /* Extentions.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -151,6 +158,7 @@
 		536DFEC624C604DF004C5C3A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				536DFEDE24C60D10004C5C3A /* Articles */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -174,6 +182,7 @@
 		536DFECF24C60663004C5C3A /* Articles */ = {
 			isa = PBXGroup;
 			children = (
+				536DFEDA24C60C2E004C5C3A /* Cells */,
 				536DFED024C60686004C5C3A /* ArticleListingViewModel.swift */,
 			);
 			path = Articles;
@@ -194,6 +203,22 @@
 				536DFED424C60780004C5C3A /* BaseTableViewCell.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		536DFEDA24C60C2E004C5C3A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				536DFEDB24C60C4B004C5C3A /* ArticleListingCellViewModel.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		536DFEDE24C60D10004C5C3A /* Articles */ = {
+			isa = PBXGroup;
+			children = (
+				536DFEDF24C60D1F004C5C3A /* AricleListingModels.swift */,
+			);
+			path = Articles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,16 +293,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				536DFEDC24C60C4B004C5C3A /* ArticleListingCellViewModel.swift in Sources */,
 				536DFEBF24C6031F004C5C3A /* ServiceInteractor.swift in Sources */,
 				536DFEC124C603D7004C5C3A /* FirebaseInteractor.swift in Sources */,
 				536DFECE24C6060B004C5C3A /* ArticleListingViewController.swift in Sources */,
 				536DFECB24C60576004C5C3A /* Utility.swift in Sources */,
 				536DFED524C60780004C5C3A /* BaseTableViewCell.swift in Sources */,
+				536DFEE024C60D1F004C5C3A /* AricleListingModels.swift in Sources */,
 				536DFEAB24C5FF36004C5C3A /* SidTest.xcdatamodeld in Sources */,
 				536DFEA124C5FF36004C5C3A /* AppDelegate.swift in Sources */,
 				536DFED124C60686004C5C3A /* ArticleListingViewModel.swift in Sources */,
 				536DFEBA24C60270004C5C3A /* HelperProtocols.swift in Sources */,
 				536DFEC924C60531004C5C3A /* BaseViewController.swift in Sources */,
+				536DFEE224C611BB004C5C3A /* Extentions.swift in Sources */,
 				536DFEBC24C602D0004C5C3A /* Enums.swift in Sources */,
 				536DFED824C607D3004C5C3A /* ArticleListingTableViewCell.swift in Sources */,
 				536DFEA324C5FF36004C5C3A /* SceneDelegate.swift in Sources */,

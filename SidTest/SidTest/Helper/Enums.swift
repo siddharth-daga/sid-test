@@ -21,3 +21,7 @@ enum ParameterKeys: String {
 enum UpdateViewModelIdentifier {
     case none
 }
+
+enum CellIdentifiers: String {
+    case articleListingTableViewCell = "ArticleListingTableViewCell"
+}

@@ -9,23 +9,37 @@
 /* Begin PBXBuildFile section */
 		536DFEA124C5FF36004C5C3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536DFEA024C5FF36004C5C3A /* AppDelegate.swift */; };
 		536DFEA324C5FF36004C5C3A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536DFEA224C5FF36004C5C3A /* SceneDelegate.swift */; };
-		536DFEA524C5FF36004C5C3A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536DFEA424C5FF36004C5C3A /* ViewController.swift */; };
 		536DFEA824C5FF36004C5C3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 536DFEA624C5FF36004C5C3A /* Main.storyboard */; };
 		536DFEAB24C5FF36004C5C3A /* SidTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 536DFEA924C5FF36004C5C3A /* SidTest.xcdatamodeld */; };
 		536DFEAD24C5FF39004C5C3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 536DFEAC24C5FF39004C5C3A /* Assets.xcassets */; };
 		536DFEB024C5FF39004C5C3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 536DFEAE24C5FF39004C5C3A /* LaunchScreen.storyboard */; };
+		536DFEBA24C60270004C5C3A /* HelperProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536DFEB924C60270004C5C3A /* HelperProtocols.swift */; };
+		536DFEBC24C602D0004C5C3A /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536DFEBB24C602D0004C5C3A /* Enums.swift */; };
+		536DFEBF24C6031F004C5C3A /* ServiceInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536DFEBE24C6031F004C5C3A /* ServiceInteractor.swift */; };
+		536DFEC124C603D7004C5C3A /* FirebaseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536DFEC024C603D7004C5C3A /* FirebaseInteractor.swift */; };
+		536DFEC924C60531004C5C3A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536DFEC824C60531004C5C3A /* BaseViewController.swift */; };
+		536DFECB24C60576004C5C3A /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536DFECA24C60576004C5C3A /* Utility.swift */; };
+		536DFECE24C6060B004C5C3A /* ArticleListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536DFECD24C6060B004C5C3A /* ArticleListingViewController.swift */; };
+		536DFED124C60686004C5C3A /* ArticleListingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536DFED024C60686004C5C3A /* ArticleListingViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		536DFE9D24C5FF36004C5C3A /* SidTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SidTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		536DFEA024C5FF36004C5C3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		536DFEA224C5FF36004C5C3A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		536DFEA424C5FF36004C5C3A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		536DFEA724C5FF36004C5C3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		536DFEAA24C5FF36004C5C3A /* SidTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SidTest.xcdatamodel; sourceTree = "<group>"; };
 		536DFEAC24C5FF39004C5C3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		536DFEAF24C5FF39004C5C3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		536DFEB124C5FF39004C5C3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		536DFEB924C60270004C5C3A /* HelperProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperProtocols.swift; sourceTree = "<group>"; };
+		536DFEBB24C602D0004C5C3A /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		536DFEBE24C6031F004C5C3A /* ServiceInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceInteractor.swift; sourceTree = "<group>"; };
+		536DFEC024C603D7004C5C3A /* FirebaseInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseInteractor.swift; sourceTree = "<group>"; };
+		536DFEC824C60531004C5C3A /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		536DFECA24C60576004C5C3A /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		536DFECD24C6060B004C5C3A /* ArticleListingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListingViewController.swift; sourceTree = "<group>"; };
+		536DFED024C60686004C5C3A /* ArticleListingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListingViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +72,103 @@
 		536DFE9F24C5FF36004C5C3A /* SidTest */ = {
 			isa = PBXGroup;
 			children = (
+				536DFEC624C604DF004C5C3A /* Model */,
+				536DFEC524C604D7004C5C3A /* ViewModel */,
+				536DFEC424C604CE004C5C3A /* Controller */,
+				536DFEC324C604C7004C5C3A /* Cells */,
+				536DFEC224C6049F004C5C3A /* Storyboards */,
+				536DFEBD24C60304004C5C3A /* Interactor */,
+				536DFEB824C60270004C5C3A /* Helper */,
 				536DFEA024C5FF36004C5C3A /* AppDelegate.swift */,
 				536DFEA224C5FF36004C5C3A /* SceneDelegate.swift */,
-				536DFEA424C5FF36004C5C3A /* ViewController.swift */,
-				536DFEA624C5FF36004C5C3A /* Main.storyboard */,
 				536DFEAC24C5FF39004C5C3A /* Assets.xcassets */,
 				536DFEAE24C5FF39004C5C3A /* LaunchScreen.storyboard */,
 				536DFEB124C5FF39004C5C3A /* Info.plist */,
 				536DFEA924C5FF36004C5C3A /* SidTest.xcdatamodeld */,
 			);
 			path = SidTest;
+			sourceTree = "<group>";
+		};
+		536DFEB824C60270004C5C3A /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				536DFEB924C60270004C5C3A /* HelperProtocols.swift */,
+				536DFEBB24C602D0004C5C3A /* Enums.swift */,
+				536DFECA24C60576004C5C3A /* Utility.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		536DFEBD24C60304004C5C3A /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				536DFEBE24C6031F004C5C3A /* ServiceInteractor.swift */,
+				536DFEC024C603D7004C5C3A /* FirebaseInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		536DFEC224C6049F004C5C3A /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				536DFEA624C5FF36004C5C3A /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		536DFEC324C604C7004C5C3A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		536DFEC424C604CE004C5C3A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				536DFECC24C605F0004C5C3A /* Articles */,
+				536DFEC724C6051D004C5C3A /* Base */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		536DFEC524C604D7004C5C3A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				536DFECF24C60663004C5C3A /* Articles */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		536DFEC624C604DF004C5C3A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		536DFEC724C6051D004C5C3A /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				536DFEC824C60531004C5C3A /* BaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		536DFECC24C605F0004C5C3A /* Articles */ = {
+			isa = PBXGroup;
+			children = (
+				536DFECD24C6060B004C5C3A /* ArticleListingViewController.swift */,
+			);
+			path = Articles;
+			sourceTree = "<group>";
+		};
+		536DFECF24C60663004C5C3A /* Articles */ = {
+			isa = PBXGroup;
+			children = (
+				536DFED024C60686004C5C3A /* ArticleListingViewModel.swift */,
+			);
+			path = Articles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,9 +242,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				536DFEBF24C6031F004C5C3A /* ServiceInteractor.swift in Sources */,
+				536DFEC124C603D7004C5C3A /* FirebaseInteractor.swift in Sources */,
+				536DFECE24C6060B004C5C3A /* ArticleListingViewController.swift in Sources */,
+				536DFECB24C60576004C5C3A /* Utility.swift in Sources */,
 				536DFEAB24C5FF36004C5C3A /* SidTest.xcdatamodeld in Sources */,
-				536DFEA524C5FF36004C5C3A /* ViewController.swift in Sources */,
 				536DFEA124C5FF36004C5C3A /* AppDelegate.swift in Sources */,
+				536DFED124C60686004C5C3A /* ArticleListingViewModel.swift in Sources */,
+				536DFEBA24C60270004C5C3A /* HelperProtocols.swift in Sources */,
+				536DFEC924C60531004C5C3A /* BaseViewController.swift in Sources */,
+				536DFEBC24C602D0004C5C3A /* Enums.swift in Sources */,
 				536DFEA324C5FF36004C5C3A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

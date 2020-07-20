@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ArticleListingViewController.swift
 //  SidTest
 //
 //  Created by Backup on 20/07/20.
@@ -8,13 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ArticleListingViewController: BaseViewController {
 
+    let viewModel = ArticleListingViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
-
 }
-

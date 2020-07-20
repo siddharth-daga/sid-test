@@ -11,5 +11,4 @@ import UIKit
 class ArticleListingViewModel: BaseViewModel {
 
     weak var delegate: UpdateViewController?
-    
 }

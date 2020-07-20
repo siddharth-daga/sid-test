@@ -10,6 +10,8 @@ import UIKit
 
 class ArticleListingViewController: BaseViewController {
 
+    @IBOutlet weak var tblArticleListing: UITableView?
+    
     let viewModel = ArticleListingViewModel()
     
     override func viewDidLoad() {

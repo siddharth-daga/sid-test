@@ -21,6 +21,9 @@
 		536DFECB24C60576004C5C3A /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536DFECA24C60576004C5C3A /* Utility.swift */; };
 		536DFECE24C6060B004C5C3A /* ArticleListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536DFECD24C6060B004C5C3A /* ArticleListingViewController.swift */; };
 		536DFED124C60686004C5C3A /* ArticleListingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536DFED024C60686004C5C3A /* ArticleListingViewModel.swift */; };
+		536DFED524C60780004C5C3A /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536DFED424C60780004C5C3A /* BaseTableViewCell.swift */; };
+		536DFED824C607D3004C5C3A /* ArticleListingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536DFED624C607D3004C5C3A /* ArticleListingTableViewCell.swift */; };
+		536DFED924C607D3004C5C3A /* ArticleListingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 536DFED724C607D3004C5C3A /* ArticleListingTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		536DFECA24C60576004C5C3A /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		536DFECD24C6060B004C5C3A /* ArticleListingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListingViewController.swift; sourceTree = "<group>"; };
 		536DFED024C60686004C5C3A /* ArticleListingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListingViewModel.swift; sourceTree = "<group>"; };
+		536DFED424C60780004C5C3A /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		536DFED624C607D3004C5C3A /* ArticleListingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListingTableViewCell.swift; sourceTree = "<group>"; };
+		536DFED724C607D3004C5C3A /* ArticleListingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleListingTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +125,8 @@
 		536DFEC324C604C7004C5C3A /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				536DFED224C60755004C5C3A /* Articles */,
+				536DFED324C6076A004C5C3A /* Base */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -169,6 +177,23 @@
 				536DFED024C60686004C5C3A /* ArticleListingViewModel.swift */,
 			);
 			path = Articles;
+			sourceTree = "<group>";
+		};
+		536DFED224C60755004C5C3A /* Articles */ = {
+			isa = PBXGroup;
+			children = (
+				536DFED624C607D3004C5C3A /* ArticleListingTableViewCell.swift */,
+				536DFED724C607D3004C5C3A /* ArticleListingTableViewCell.xib */,
+			);
+			path = Articles;
+			sourceTree = "<group>";
+		};
+		536DFED324C6076A004C5C3A /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				536DFED424C60780004C5C3A /* BaseTableViewCell.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				536DFEB024C5FF39004C5C3A /* LaunchScreen.storyboard in Resources */,
+				536DFED924C607D3004C5C3A /* ArticleListingTableViewCell.xib in Resources */,
 				536DFEAD24C5FF39004C5C3A /* Assets.xcassets in Resources */,
 				536DFEA824C5FF36004C5C3A /* Main.storyboard in Resources */,
 			);
@@ -246,12 +272,14 @@
 				536DFEC124C603D7004C5C3A /* FirebaseInteractor.swift in Sources */,
 				536DFECE24C6060B004C5C3A /* ArticleListingViewController.swift in Sources */,
 				536DFECB24C60576004C5C3A /* Utility.swift in Sources */,
+				536DFED524C60780004C5C3A /* BaseTableViewCell.swift in Sources */,
 				536DFEAB24C5FF36004C5C3A /* SidTest.xcdatamodeld in Sources */,
 				536DFEA124C5FF36004C5C3A /* AppDelegate.swift in Sources */,
 				536DFED124C60686004C5C3A /* ArticleListingViewModel.swift in Sources */,
 				536DFEBA24C60270004C5C3A /* HelperProtocols.swift in Sources */,
 				536DFEC924C60531004C5C3A /* BaseViewController.swift in Sources */,
 				536DFEBC24C602D0004C5C3A /* Enums.swift in Sources */,
+				536DFED824C607D3004C5C3A /* ArticleListingTableViewCell.swift in Sources */,
 				536DFEA324C5FF36004C5C3A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,17 +7,18 @@
 //
 
 import Foundation
+import CoreData
 
 // MARK: - ArticleListingResponse
 struct ArticleListingResponse: Codable {
     let id, createdAt, content: String?
     let comments, likes: Int?
-    let media: [Media]?
-    let user: [User]?
+    let media: [MediaCodable]?
+    let user: [UserCodable]?
 }
 
 // MARK: - Media
-struct Media: Codable {
+struct MediaCodable: Codable {
     let id, blogId, createdAt: String?
     let image: String?
     let title: String?
@@ -25,7 +26,7 @@ struct Media: Codable {
 }
 
 // MARK: - User
-struct User: Codable {
+struct UserCodable: Codable {
     let id, blogId, createdAt, name: String?
     let avatar: String?
     let lastname, city, designation, about: String?

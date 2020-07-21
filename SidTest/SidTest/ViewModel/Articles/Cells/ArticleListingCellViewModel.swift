@@ -24,17 +24,17 @@ class ArticleListingCellViewModel: ArticleListingCellPresentable {
     var indexPath: IndexPath?
     var cellHeight: CGFloat = UITableView.automaticDimension
     
-    init(delegate: UpdateViewModel?, article: ArticleListingResponse?) {
+    init(delegate: UpdateViewModel?, article: Article?) {
         self.delegate = delegate
         
-        let user = article?.user?.first
+        let user = article?.user?.array.first as? User
         imgUserUrl = user?.avatar
         let timeDate = article?.createdAt?.toDate(dateFormat: .dateFormat1)
         time = timeDate?.timeAgoSince()
         userName = "\(user?.name ?? "") \(user?.lastname ?? "")"
         userDesignation = user?.designation
         
-        let media = article?.media?.first
+        let media = article?.media?.array.first as? Media
         imgArticleUrl = media?.image
         articleContent = article?.content
         articleTitle = media?.title
@@ -42,8 +42,8 @@ class ArticleListingCellViewModel: ArticleListingCellPresentable {
         let str: NSMutableAttributedString = NSMutableAttributedString(string: media?.url ?? "", type: .regular, size: 14.0, textColor: .black)
         str.addAttribute(NSAttributedString.Key.link, value: media?.url ?? "", range: NSRange(location: 0, length: str.length))
         articleUrl = str
-        articleLikesCount = "\(article?.likes?.formatUsingAbbrevation() ?? "0") Likes"
-        articleCommentsCount = "\(article?.comments?.formatUsingAbbrevation() ?? "0") Comments"
+        articleLikesCount = "\(article?.likes.formatUsingAbbrevation() ?? "0") Likes"
+        articleCommentsCount = "\(article?.comments.formatUsingAbbrevation() ?? "0") Comments"
     }
 }
 

@@ -6,14 +6,15 @@
 //  Copyright © 2020 Backup. All rights reserved.
 //
 
-import Foundation
+import UIKit
+import CoreData
+
 
 struct ServiceInteractor {
     
     private var resourceType: RequestResourceType
     private var parameters: [ParameterKeys: String] = [:]
     private var httpBody: Data?
-    var keyDecodingStrategy: JSONDecoder.KeyDecodingStrategy = .convertFromSnakeCase
     
     init(resourceType: RequestResourceType, params: [ParameterKeys: String] = [:]) {
         self.resourceType = resourceType
@@ -53,7 +54,7 @@ struct ServiceInteractor {
         }
     }
     
-    func getResult<U: Codable>(object: U.Type, completion: ((_ response: Codable?, _ error: Error?) -> ())?) {
+    func getResult<U: Codable>(object: U.Type, completion: ((_ response: Data?, _ error: Error?) -> ())?) {
         guard let url = URL(string: self.baseURL) else {
             completion?(nil, nil)
             return
@@ -70,7 +71,6 @@ struct ServiceInteractor {
         
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             self.dubugPrint(request: request, response: response, responseBody: data, error: error)
-            var parsedResponse:U?
             var parseError: Error?
             
             guard let dataResponse = data,
@@ -79,17 +79,9 @@ struct ServiceInteractor {
                     completion?(nil, parseError)
                     return
             }
-            do {
-                let decoder = JSONDecoder()
-                decoder.keyDecodingStrategy = self.keyDecodingStrategy
-                parsedResponse = try decoder.decode(object, from: dataResponse)
-            } catch let parsingError {
-                parseError = parsingError
-                if self.debugLogging { print(parseError ?? parsingError) }
-            }
             
             DispatchQueue.main.async {
-                completion?(parsedResponse, parseError)
+                completion?(dataResponse, parseError)
             }
         }
         task.resume()

@@ -43,7 +43,7 @@ extension UIView {
     }
 }
 
-extension Int {
+extension Int64 {
 
     func formatUsingAbbrevation() -> String? {
         let numFormatter = NumberFormatter()
@@ -166,4 +166,8 @@ extension UIFont {
         case .bold: return UIFont(name: "HelveticaNeue-Bold", size: size)
         }
     }
+}
+
+extension CodingUserInfoKey {
+   static let context = CodingUserInfoKey(rawValue: "context")
 }

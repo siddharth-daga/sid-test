@@ -13,6 +13,7 @@ class ArticleListingViewController: BaseViewController {
     @IBOutlet weak var tblArticleListing: UITableView?
     
     let viewModel = ArticleListingViewModel()
+    let activityIndicator = UIActivityIndicatorView(style: .medium)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,12 +22,14 @@ class ArticleListingViewController: BaseViewController {
     
     func setupUI() {
         self.title = "Articles"
-        tblArticleListing?.tableFooterView = UIView()
+        activityIndicator.hidesWhenStopped = true
+        tblArticleListing?.tableFooterView = activityIndicator
         tblArticleListing?.registerNibs(identifiers: [.articleListingTableViewCell])
         setupViewModel()
     }
     
     func setupViewModel() {
+        self.showLoadingInView()
         viewModel.delegate = self
         viewModel.fetchArticleListingData()
     }
@@ -35,6 +38,7 @@ class ArticleListingViewController: BaseViewController {
 extension ArticleListingViewController: UpdateViewController {
     func reloadTable() {
         OperationQueue.main.addOperation {
+            self.activityIndicator.stopAnimating()
             self.tblArticleListing?.reloadData()
         }
     }
@@ -48,5 +52,14 @@ extension ArticleListingViewController: UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return viewModel.cellInstanceTableView(tableView, indexPath: indexPath)
     }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if viewModel.isListEndReached == false && (indexPath.row == viewModel.cellViewModels.count - 1) {
+            activityIndicator.startAnimating()
+            viewModel.pageNo += 1
+            viewModel.fetchArticleListingData()
+        } else {
+            tblArticleListing?.tableFooterView = UIView()
+        }
+    }
 }
-

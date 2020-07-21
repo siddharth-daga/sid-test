@@ -25,3 +25,12 @@ enum UpdateViewModelIdentifier {
 enum CellIdentifiers: String {
     case articleListingTableViewCell = "ArticleListingTableViewCell"
 }
+
+enum DateFormats: String {
+    case dateFormat1 = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+}
+
+enum FontTypeEnum {
+    case regular
+    case bold
+}

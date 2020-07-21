@@ -13,9 +13,9 @@ class ArticleListingViewModel: BaseViewModel {
     weak var delegate: UpdateViewController?
     var cellViewModels: [ArticleListingCellViewModel] = []
     var pageNo: Int = 1
+    var isListEndReached: Bool = true
     
     func fetchArticleListingData() {
-        delegate?.showLoadingInView()
         let parameters: [ParameterKeys: String] = [ParameterKeys.pageNo: "\(pageNo)"]
         let interactor = ServiceInteractor(resourceType: .getArticleListing, params: parameters)
         interactor.getResult(object: [ArticleListingResponse].self) { [weak self] (response, error) in
@@ -35,6 +35,12 @@ class ArticleListingViewModel: BaseViewModel {
             cellViewModels.append(cellViewModel)
         }
         
+        if articles.count < 10 {
+            isListEndReached = true
+        } else {
+            isListEndReached = false
+        }
+        
         delegate?.reloadTable()
         delegate?.hideLoadingInView()
     }
@@ -43,7 +49,6 @@ class ArticleListingViewModel: BaseViewModel {
         if let cellViewModel = cellViewModels[safe: indexPath.row] {
             let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.articleListingTableViewCell.rawValue, for: indexPath) as? ArticleListingTableViewCell
             cell?.setupCell(viewPresentable: cellViewModel)
-            
             return cell ?? UITableViewCell()
         }
         

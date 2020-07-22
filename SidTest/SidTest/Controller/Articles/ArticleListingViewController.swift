@@ -37,7 +37,7 @@ class ArticleListingViewController: BaseViewController {
 
 extension ArticleListingViewController: UpdateViewController {
     func reloadTable() {
-        OperationQueue.main.addOperation {
+        DispatchQueue.main.async {
             self.hideLoadingInView()
             self.activityIndicator.stopAnimating()
             self.tblArticleListing?.reloadData()
@@ -55,12 +55,12 @@ extension ArticleListingViewController: UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        /*if viewModel.isListEndReached == false && (indexPath.row == viewModel.cellViewModels.count - 1) {
+        if viewModel.isListEndReached == false && (indexPath.row == viewModel.cellViewModels.count - 1) {
             activityIndicator.startAnimating()
             viewModel.pageNo += 1
             viewModel.fetchArticleListingData()
         } else {
             tblArticleListing?.tableFooterView = UIView()
-        }*/
+        }
     }
 }

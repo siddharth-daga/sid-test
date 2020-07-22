@@ -29,21 +29,21 @@ class ArticleListingViewModel: BaseViewModel {
         }
         
         self.loadSavedData()
+        self.fetchArticleListingData()
     }
     
     func fetchArticleListingData() {
         let parameters: [ParameterKeys: String] = [ParameterKeys.pageNo: "\(pageNo)"]
         let interactor = ServiceInteractor(resourceType: .getArticleListing, params: parameters)
         interactor.getResult(object: [Article].self) { [weak self] (response, error) in
+            guard let self = self else {return}
             guard let data = response else { return }
             do {
                 let decoder = JSONDecoder()
-                decoder.userInfo[CodingUserInfoKey.context!] = self?.container.viewContext
-                let _ = try decoder.decode([Article].self, from: data)
+                decoder.userInfo[CodingUserInfoKey.context!] = self.container.viewContext
+                _ = try decoder.decode([Article].self, from: data)
                 
-                // Move back on the main thread, as we call tableview.reload
-                DispatchQueue.main.async { [weak self] in
-                    guard let self = self else {return}
+                DispatchQueue.main.async {
                     self.saveContext()
                     self.loadSavedData()
                 }
@@ -65,27 +65,20 @@ class ArticleListingViewModel: BaseViewModel {
     
     func loadSavedData() {
         let request: NSFetchRequest<Article> = Article.fetchRequest()
-        let sort = NSSortDescriptor(key: "id", ascending: false)
+        let sort = NSSortDescriptor(key: "id", ascending: true)
         request.sortDescriptors = [sort]
         
         do {
             // fetch is performed on the NSManagedObjectContext
             let articles = try self.container.viewContext.fetch(request)
-            if articles.count == 0 {
-                self.fetchArticleListingData()
-            } else {
-                self.setupCellViewModels(articles: articles)
-            }
+            self.setupCellViewModels(articles: articles)
         } catch {
             print("Fetch failed")
         }
     }
     
     func setupCellViewModels(articles: [Article]) {
-        if pageNo == 1 {
-            cellViewModels.removeAll()
-        }
-        
+        cellViewModels.removeAll()
         for article in articles {
             let cellViewModel = ArticleListingCellViewModel(delegate: self, article: article)
             cellViewModels.append(cellViewModel)

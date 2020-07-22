@@ -18,13 +18,13 @@ class BaseViewController: UIViewController {
 extension BaseViewController: UpdateBaseViewController {
     
     func showLoadingInView() {
-        OperationQueue.main.addOperation {
+        DispatchQueue.main.async {
             Utility.sharedInstance.showLoadingInView(view: self.view)
         }
     }
     
     func hideLoadingInView() {
-        OperationQueue.main.addOperation {
+        DispatchQueue.main.async {
             Utility.sharedInstance.hideLoadingInView(view: self.view)
         }
     }

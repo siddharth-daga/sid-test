@@ -39,9 +39,9 @@ public class Article: NSManagedObject, Codable {
             comments = try values.decode(Int64.self, forKey: .comments)
             likes = try values.decode(Int64.self, forKey: .likes)
             let medias = try values.decode([Media].self, forKey: .media)
-            medias.forEach { addToMedia($0) }
+            media = NSOrderedSet(array: medias)
             let users = try values.decode([User].self, forKey: .user)
-            users.forEach { addToUser($0) }
+            user = NSOrderedSet(array: users)
         } catch {
             print ("error")
         }

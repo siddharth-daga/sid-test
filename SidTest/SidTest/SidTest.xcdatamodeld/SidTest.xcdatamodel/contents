@@ -6,8 +6,8 @@
         <attribute name="createdAt" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="likes" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="media" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Media"/>
-        <relationship name="user" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="User"/>
+        <relationship name="media" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Media" inverseName="article" inverseEntity="Media"/>
+        <relationship name="user" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="User" inverseName="article" inverseEntity="User"/>
         <uniquenessConstraints>
             <uniquenessConstraint>
                 <constraint value="id"/>
@@ -21,6 +21,7 @@
         <attribute name="image" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
         <attribute name="url" optional="YES" attributeType="String"/>
+        <relationship name="article" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Article" inverseName="media" inverseEntity="Article"/>
     </entity>
     <entity name="User" representedClassName="User" syncable="YES">
         <attribute name="about" optional="YES" attributeType="String"/>
@@ -32,10 +33,11 @@
         <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="lastname" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="article" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Article" inverseName="user" inverseEntity="Article"/>
     </entity>
     <elements>
         <element name="Article" positionX="-63" positionY="-18" width="128" height="148"/>
-        <element name="Media" positionX="-54" positionY="27" width="128" height="133"/>
-        <element name="User" positionX="-36" positionY="72" width="128" height="178"/>
+        <element name="Media" positionX="-54" positionY="27" width="128" height="148"/>
+        <element name="User" positionX="-36" positionY="72" width="128" height="193"/>
     </elements>
 </model>

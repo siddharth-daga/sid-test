@@ -2,8 +2,8 @@
 //  ServiceInteractor.swift
 //  SidTest
 //
-//  Created by Backup on 20/07/20.
-//  Copyright © 2020 Backup. All rights reserved.
+//  Created by Siddharth Daga on 20/07/20.
+//  Copyright © 2020 Siddharth Daga. All rights reserved.
 //
 
 import UIKit

@@ -2,7 +2,7 @@
 //  User+CoreDataClass.swift
 //  
 //
-//  Created by Backup on 21/07/20.
+//  Created by Siddharth Daga on 21/07/20.
 //
 //
 
